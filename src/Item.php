@@ -42,4 +42,18 @@ class Item {
 
         return $this;
     }
+
+    public function degradeQuality()
+    {
+        if ($this->getQuality() > 0) {
+            $this->setQuality($this->getQuality() - 1);
+        }
+    }
+
+    public function upgrateQuality($item)
+    {
+        if ($this->getQuality() < 50) {
+            $this->setQuality($item->getQuality() + 1);
+        }
+    }
 }
