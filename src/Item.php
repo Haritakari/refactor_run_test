@@ -4,18 +4,42 @@ namespace Runroom\GildedRose;
 
 class Item {
 
-    public $name;
-    public $sell_in;
-    public $quality;
+    private $name;
+    private $sellIn;
+    private $quality;
 
-    function __construct($name, $sell_in, $quality) {
+    function __construct(string $name, int $sellIn, int $quality) {
         $this->name = $name;
-        $this->sell_in = $sell_in;
+        $this->sellIn = $sellIn;
         $this->quality = $quality;
     }
 
-    public function __toString() {
-        return "{$this->name}, {$this->sell_in}, {$this->quality}";
+    public function getName(): string
+    {
+        return $this->name;
     }
 
+    public function getSellIn(): int
+    {
+        return $this->sellIn;
+    }
+
+    public function setSellIn(int $sellIn)
+    {
+        $this->sellIn = $sellIn;
+
+        return $this;
+    }
+
+    public function getQuality(): int
+    {
+        return $this->quality;
+    }
+
+    public function setQuality(int $quality)
+    {
+        $this->quality = $quality;
+
+        return $this;
+    }
 }
